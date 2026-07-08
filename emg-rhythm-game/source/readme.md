@@ -1,5 +1,4 @@
-# タイトル
-MMC RHYTHM GAME
+# MMC RHYTHM GAME
 筋電図（EMG）を利用したリズムゲーム
 
 Python・Pygame・Arduino・筋電センサを用いて開発したリズムゲームです。
