@@ -1,0 +1,164 @@
+# プロジェクト演習11 (physical4)
+# メンバーリスト
+
+- 西村英晃 (デザイナー)
+
+![自画像](../rsc/umi.png)
+
+- 大橋拓磨 (エンジニア)
+
+![自画像](../rsc/nitou.png)
+
+-  松畑喜紀　(リーダー)
+
+![自画像](../rsc/My24.png)
+
+- 木津谷樹 (エンジニア)
+
+![自画像](../rsc/soge.png)
+
+
+# フォルダ構成
+```
+practice_on_design_project_11/
+├── source/
+│   ├── scripts/
+│   │   ├── MMC.py
+│   │   └── Arduino.ino
+│   ├── rsc/
+│   │   ├── body.png
+│   │   ├── left_arm.png
+│   │   ├── right_arm.png
+│   │   ├── left_chest.png
+│   │   ├── right_chest.png
+│   │   ├── takuma.png
+│   │   ├── nakayama.png
+│   │   ├── bgm.mp3
+│   │   ├── Power.mp3
+│   │   └── miss.mp3
+│   └── readme.md
+└── rsc/
+```
+## 概要
+
+筋電図（EMG）を利用して操作するリズムゲームを制作した。
+
+プレイヤーはゲーム開始前に使用する筋肉を2か所選択し、画面上から流れてくるノーツに合わせて筋肉を動かすことでゲームをプレイする。
+
+筋電センサから取得した値を入力として使用する。
+
+## 開発環境
+
+- Windows 11
+- Python 3.14.5
+- pygame-ce 2.5.7
+- pyserial
+- Arduino Uno
+
+## 使用機材
+
+- Arduino Uno ×2
+- 筋電センサ ×4
+- PC
+
+
+## 使用方法
+
+1. プログラムを起動する。
+
+2. 筋肉選択画面が表示されるので、使用する筋肉を2か所選択する。
+
+3. Enterキーを押してゲームを開始する。
+
+4. 画面上部から選択した筋肉に対応するノーツが落下してくる。
+
+5. ノーツが判定位置に重なるタイミングで対応する筋肉を動かして入力する。
+
+6. タイミングに応じてPERFECT、GOOD、MISSの判定が表示される。
+
+7. PERFECTは300点、GOODは150点加算される。MISSの場合は150点減点される。
+
+8. ノーツを取り逃した場合もMISSとなる。
+
+9. ウィンドウを閉じるとゲームを終了できる
+
+## ライブラリのインストール
+
+以下のコマンドを実行する。
+
+```bash
+pip install pygame-ce
+pip install pyserial
+```
+
+## 実行方法
+
+Arduinoを接続した状態で以下を実行する。
+
+```bash
+python source\scripts\MMC.py
+```
+
+## 注意事項
+
+Arduinoが接続されていない場合は実行できない。
+
+また、以下のエラーが表示された場合はpyserialをインストールする。
+
+```text
+ModuleNotFoundError: No module named 'serial'
+```
+
+```bash
+pip install pyserial
+```
+## Arduinoと筋電図の接続方法
+Arduino.inoを書き込み、シリアルモニタを使用して筋電値が取得できていることを確認する。
+
+COM5は腕、COM4は胸で筋電図を確認するため書き込みを行う。
+
+胸用Arduinoには左胸と右胸の筋電センサを接続し、腕用Arduinoには左腕と右腕の筋電センサを接続する。
+
+筋電センサから取得した値はシリアル通信によってPCへ送信される。
+
+プログラム実行前にArduinoをPCへ接続し、デバイスマネージャーでCOM番号を確認する。
+
+COM番号が異なる場合は、MMC.py内の設定を変更する必要がある。
+
+コード内では以下の設定を使用している。
+
+```python
+ser_arm = serial.Serial("COM5", 115200)
+ser_chest = serial.Serial("COM4", 115200)
+```
+
+使用する環境によってCOM番号は変更する。
+
+使用した筋電センサ：MyoWare 2.0 Muscle Sensor
+
+COM4側のArduinoで、
+
+左胸EMG → A0
+
+右胸EMG → A1
+
+両センサの電源 → 3.3V
+
+両センサのGND → GND
+
+
+COM5側のArduinoで、
+
+左腕EMG → A0
+
+右腕EMG → A1
+
+両センサの電源 → 3.3V
+
+両センサのGND → GND
+
+
+
+## 発表資料
+以下のリンク
+https://1drv.ms/p/c/37ee4362c21be96d/IQBNPGVv1CzQSrIzAfVlNoj_AdXEs8oxlRYjFByTYAf9_E4?e=qZz7I0
