@@ -224,23 +224,17 @@ COM5側のArduinoで、
 
 両センサのGND → GND
 
-#　実行画面
-### 筋肉選択画面①
+## 実行画面
+筋肉選択画面①
 ![Muscle Selection](screenshots/muscle-selection.jpg)
 
-### 筋肉選択画面②
-The game starts after the player selects the muscles.
-
+ 筋肉選択画面②
 ![Game Start](screenshots/game-start.jpg)
 
-### ゲーム画面
-Control the game using EMG input and hit the notes at the correct timing.
-
+ゲーム画面
 ![Gameplay](screenshots/gameplay.jpg)
 
-### 判定画面
-The game displays PERFECT, GOOD, and MISS judgments based on the player's timing.
-
+判定画面
 ![Judgement](screenshots/judgement.jpg)
 
 ## 発表資料
