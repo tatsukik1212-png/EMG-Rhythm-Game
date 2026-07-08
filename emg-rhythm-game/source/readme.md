@@ -224,7 +224,24 @@ COM5側のArduinoで、
 
 両センサのGND → GND
 
+#実行画面
+## Screenshots
 
+### Muscle Selection
+
+![Muscle Selection](screenshots/muscle-selection.png)
+
+### Game Start
+
+![Game Start](screenshots/game-start.png)
+
+### Gameplay
+
+![Gameplay](screenshots/gameplay.png)
+
+### Judgement
+
+![Judgement](screenshots/judgement.png)
 
 ## 発表資料
 以下のリンク
