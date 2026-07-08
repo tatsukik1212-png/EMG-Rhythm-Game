@@ -228,20 +228,24 @@ COM5側のArduinoで、
 ## Screenshots
 
 ### Muscle Selection
+Select two muscles before starting the game.
 
-![Muscle Selection](screenshots/muscle-selection.png)
+![Muscle Selection](screenshots/muscle-selection.jpg)
 
 ### Game Start
+The game starts after the player selects the muscles.
 
-![Game Start](screenshots/game-start.png)
+![Game Start](screenshots/game-start.jpg)
 
 ### Gameplay
+Control the game using EMG input and hit the notes at the correct timing.
 
-![Gameplay](screenshots/gameplay.png)
+![Gameplay](screenshots/gameplay.jpg)
 
 ### Judgement
+The game displays PERFECT, GOOD, and MISS judgments based on the player's timing.
 
-![Judgement](screenshots/judgement.png)
+![Judgement](screenshots/judgement.jpg)
 
 ## 発表資料
 以下のリンク
