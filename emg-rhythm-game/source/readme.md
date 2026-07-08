@@ -1,3 +1,11 @@
+# タイトル
+MMC RHYTHM GAME
+筋電図（EMG）を利用したリズムゲーム
+
+Python・Pygame・Arduino・筋電センサを用いて開発したリズムゲームです。
+
+プレイヤーは使用する筋肉を2か所選択し、筋肉を動かすことでゲームを操作します。
+
 # フォルダ構成
 ```
 practice_on_design_project_11/
