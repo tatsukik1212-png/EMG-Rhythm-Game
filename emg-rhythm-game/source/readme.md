@@ -38,7 +38,6 @@ EMG-Rhythm-Game/
         │   └── muscle-selection.jpg
         └── readme.md
 ```
-```
 # 開発概要
 開発期間
 
